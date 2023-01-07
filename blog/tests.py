@@ -55,7 +55,7 @@ class TestView(TestCase):
             title = '첫 번째 포스트입니다.',
             content = 'Hello World. We are the world',
         )
-        self.assertEqual(post_001.get_absolute_url(), '/blog/1')
+        self.assertEqual(post_001.get_absolute_url(), '/blog/1/')
         # 1.2 그 포스트의 url '/blog/1' 이다.
         
         # 2. 첫 번째 포스트의 상세 페이지 테스트
@@ -67,7 +67,7 @@ class TestView(TestCase):
 
         navbar = soup.nav
         self.assertIn('Blog', navbar.text)
-        self.assertIn('About me', navbar.text)
+        self.assertIn('About Me', navbar.text)
         # 2.3 첫 번째 포스트의 제목이 웹 브라우저 탭 타이틀에 들어 있다.
         self.assertIn(post_001.title, soup.title.text)
         # 2.4 첫 번째 포스트의 제목이 포스트 영역에 있다.
