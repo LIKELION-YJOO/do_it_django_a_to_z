@@ -29,7 +29,7 @@ class PostDetail(DetailView):
         context['comment_form'] = CommentForm
         return context
 
-class PostCreate(LoginRequiredMixin, UserPassesTestMixin,CreateView):
+class PostCreate(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Post
     fields = ['title', 'hook_text', 'content', 'head_image', 'file_upload', 'category']
 
